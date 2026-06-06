@@ -1,0 +1,41 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #09090b;
+  --foreground: #fafafa;
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: 'Inter', system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@layer components {
+  .btn-premium {
+    @apply relative flex items-center justify-center px-6 py-3 font-medium text-white transition-all duration-300 rounded-xl bg-gradient-premium hover:opacity-90 active:scale-95 shadow-premium;
+  }
+  
+  .card-premium {
+    @apply bg-card border border-white/10 backdrop-blur-md rounded-2xl p-6 shadow-xl transition-all duration-300 hover:border-white/20;
+  }
+
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-premium;
+  }
+}
+
+/* Custom animations */
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
